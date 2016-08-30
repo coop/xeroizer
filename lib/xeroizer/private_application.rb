@@ -17,7 +17,7 @@ module Xeroizer
       def initialize(consumer_key, consumer_secret, path_to_private_key, options = {})
         options.merge!(
           :signature_method => 'RSA-SHA1',
-          :private_key_file => path_to_private_key
+          :private_key => path_to_private_key
         )
         super(consumer_key, consumer_secret, options)
         @client.authorize_from_access(consumer_key, consumer_secret)
